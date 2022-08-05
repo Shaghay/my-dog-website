@@ -9,16 +9,25 @@
 }
 .main-nav{
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-end; /*to push the items to the rigth*/
     list-style: none;
     padding-right: 5px;
 }
 .main-nav li{
     padding: 10px; 
+    text-decoration: none;
 }
 .push{
     margin-right: auto; /* to push it to left*/ 
 }
+a{
+    text-decoration: none; /*to remove underline from navbar*/
+    color: rgb(105, 77, 5);
+    transition: 0.2s;
+}
+a:hover {
+    color: rgb(199, 153, 38); /* to change the links color lightly by hovering*/
+  }
 body{
      margin: auto 0; /* to remove spaces around the page in browser */
      background-color: rgb(118, 101, 231);
