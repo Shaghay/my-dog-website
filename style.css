@@ -1,11 +1,13 @@
- /* NAV */
+*{
+    box-sizing: border-box;
+}
+/* NAV */
 .sticky{
     position: fixed;
     top: 0;
     width: 100%;
     height: 4em;
     background-color: rgb(233, 231, 252);
-    box-sizing: border-box;
 }
 .main-nav{
     display: flex;
@@ -49,7 +51,7 @@ h2{
     margin-top: 5rem;
 }
 /* Flex-Box */
-.container{
+.intro-container{
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
@@ -65,3 +67,81 @@ img{
     margin-top: 10%;
 }
 
+/*Slideshow-container*/
+.slideShow-container{
+    max-width: 1000px;
+    width: fit-content; /*to fit images to the container*/
+    position: static; /*to avoid running over nav-bar while scrolling*/
+    margin: auto;
+    
+}
+.mySlides {
+    display: none;
+}
+.text{
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(196, 191, 228);
+    padding: 10px 25px;
+    position: relative;
+    bottom: 40px; /*distance from the bottom of container*/
+    width: 100%;
+    text-align: center;
+    background-color: rgb(98, 91, 91);
+    opacity: 0.7;
+}
+/*left/rigth arrows*/
+.prev, .next{
+   position: absolute;
+   cursor: pointer;
+   color: rgb(244, 59, 59);
+   font-size: 40px;
+   font-weight: bold;
+   width: auto;
+   margin-top: -30%;
+   margin-left: 3%;
+   transition: 0.5s ease;
+   margin-bottom: 40%;
+   user-select: none;
+   /*margin-block: 50%;  to fix the arrows in center, although the <a> tag is influenced by links-style*/ 
+}
+.next{
+    right: 33%;
+}
+.prev:hover, .next:hover{
+    background-color: yellow;
+}
+/*Indicators*/
+.dots-container{
+    text-align: center;
+    margin-bottom: 20%;
+    margin-top: -5%; 
+}
+.dot{
+    cursor: pointer;
+    display: inline-block;
+    background-color: rgb(146, 134, 134);
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: background-color 0.5s ease;
+}
+.dot:hover{
+    background-color: rgb(55, 45, 45);
+}
+/*to show the active slide*/
+.active{
+    height: 17px;
+    width: 17px;
+    background-color: rgb(69, 66, 66);
+}
+/*fade*/
+.fade{
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@keyframes fade{
+    from {opacity: 0.3;}
+    to {opacity: 1;}
+}
